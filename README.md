@@ -3,7 +3,7 @@
 ## Project Setup
 
 - Copy `.env.example` to `.env`.
-- Run change env configuration in `.env` file.
+- Change env configuration in `.env` file.
 
 ```dotenv
 VITE_BACKEND_URL='BACKEND_URL(example: http://lr-enk.lcl)'
