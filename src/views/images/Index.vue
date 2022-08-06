@@ -32,6 +32,11 @@
 
 
             <v-divider class="mx-4"></v-divider>
+            <v-card-text class="text-center">
+              <div class="my-4 text-subtitle-1">
+                {{ image.created_at_human }}
+              </div>
+            </v-card-text>
 
             <v-card-actions class="justify-center">
               <v-btn
@@ -113,12 +118,13 @@ const echo = inject('echo');
 // listen to the event by private channel
 echo.private(`App.Models.User.${user.id}`)
     .listen('ImageDownloadedEvent', (e) => {
-      page.currentPage = 1;
-      images.value     = [];
       store.showSnackbar(e.message);
-      getImages();
     });
 
+echo.private(`App.Models.User.${user.id}`)
+    .notification((notification) => {
+      images.value.unshift(notification.image);
+    });
 
 // Get all images
 const getImages = () => {
