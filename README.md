@@ -14,4 +14,6 @@ VITE_API_URL='API_URL(example: http://lr-enk.lcl/api)'
 - Run `npm run dev` or `yarn dev`.
 - Now you can see the app in browser.
 
+### Note: Before run the app must run websocket from laravel apps.
+
 ### Thank you
